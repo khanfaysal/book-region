@@ -13,9 +13,9 @@ const SideNav = () => {
 
                     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div className="navbar-nav nav flex-column">
-                            <Link className="nav-link active text-white  " aria-current="page" to ="/manage">Home</Link>
-                            <Link className="nav-link text-white " to ="/add">Features</Link>
-                            <Link className="nav-link text-white " to ="/customize">Pricing</Link>
+                            <Link className="nav-link active text-white  " aria-current="page" to ="/manage">Manage Books</Link>
+                            <Link className="nav-link text-white " to ="/add">Add Book</Link>
+                            <Link className="nav-link text-white " to ="/customize">Edit Book</Link>
                         </div>
                     </div>
             </nav> 

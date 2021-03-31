@@ -18,6 +18,7 @@ import Login from './components/Login/Login';
 import SideNav from './components/SideNav/SideNav';
 import NotFound from './components/NoFound/NoFound'
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import Product from './components/Product/Product';
 
 export const UserContext = createContext()
 
@@ -62,6 +63,9 @@ function App() {
 
             <Route path = '/sidenav'>
               <SideNav></SideNav>
+            </Route>
+            <Route path = '/product'>
+              <Product></Product>
             </Route>
 
             <Route path = '*'>
