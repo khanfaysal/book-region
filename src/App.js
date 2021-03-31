@@ -15,6 +15,7 @@ import Add from './components/Admin/Add/Add';
 import Customize from './components/Admin/Customize/Customize';
 import CheckOut from './components/CheckOut/CheckOut';
 import Login from './components/Login/Login';
+import SideNav from './components/SideNav/SideNav';
 import NotFound from './components/NoFound/NoFound'
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 
@@ -43,9 +44,9 @@ function App() {
               <Customize></Customize>
             </Route>
 
-            <PrivateRoute path = '/add'>
+            <Route path = '/add'>
               <Add></Add>
-            </PrivateRoute>
+            </Route>
 
             <PrivateRoute path = '/manage'>
               <Manage></Manage>
@@ -57,6 +58,10 @@ function App() {
 
             <Route path = '/login'>
               <Login></Login>
+            </Route>
+
+            <Route path = '/sidenav'>
+              <SideNav></SideNav>
             </Route>
 
             <Route path = '*'>
