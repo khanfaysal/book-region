@@ -53,9 +53,9 @@ function App() {
               <Manage></Manage>
             </PrivateRoute>
 
-            <PrivateRoute path = '/checkout'>
+            <Route path = '/checkout'>
               <CheckOut></CheckOut>
-            </PrivateRoute>
+            </Route>
 
             <Route path = '/login'>
               <Login></Login>
