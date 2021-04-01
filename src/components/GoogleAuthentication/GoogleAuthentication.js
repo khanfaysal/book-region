@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import firebase from "firebase/app";
 import "firebase/auth";
-import firebaseConfig from '../Login/firebase.config'
+import firebaseConfig from '../Login/firebase.config';
+
 
 if (!firebase.apps.length) {
     firebase.initializeApp(firebaseConfig);
@@ -37,10 +38,11 @@ const GoogleAuthentication = () => {
         backgroundColor: 'tomato',
         borderRadius: 5,
         border: 'none',
-        margin: '10px 6px',
+        margin: '25px 6px',
         padding: '10px',
         fontSize: '15px',
-        cursor: 'pointer'
+        cursor: 'pointer',
+        width: '30%',
       }
     return (
      <div className="App">
