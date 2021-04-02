@@ -1,10 +1,50 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 import SideNav from '../../SideNav/SideNav';
+import './Add.css';
 
 const Add = () => {
     const { register, handleSubmit, watch, errors, } = useForm();
-    const onSubmit = data => console.log(data);
+    const [imageURL, setImageURL] = useState(null);
+
+    const onSubmit = data => {
+        const bookData = {
+            bookName: data.bookName,
+            authorName: data.authorName,
+            price: data.price,
+            imageURL: imageURL
+        };
+        const url = `http://localhost:5055/addBookInfo`;
+        fetch(url,{
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(bookData)
+        })
+        .then(res => console.log('server side response'))
+    };
+    
+    const handleImageUpload = event =>{
+        console.log(event.target.files[0])
+        const imageData = new FormData();
+        imageData.set('key', 'defc38c8221f60aa89f0ade96a2e8342');
+        imageData.append('image', event.target.files[0])
+
+        axios.post('https://api.imgbb.com/1/upload',imageData)
+            .then(function (response) {
+                // handle success
+                setImageURL(response.data.data.display_url);
+            })
+            .catch(function (error) {
+                // handle error
+                console.log(error);
+            })
+            .then(function () {
+                // always executed
+            });
+    }
     return (
         <div className = "container">
              <div className = "row">
@@ -13,20 +53,24 @@ const Add = () => {
              </div>
                 <div className = "col-md-10">
                     <h2>Add Book</h2>
-                    <form onSubmit={handleSubmit(onSubmit)}>
+                    <form className = "book-form" onSubmit={handleSubmit(onSubmit)}>
 
-                        <input name="name" ref={register({ required: true })} placeholder ="Your Name" />
-                        {errors.name && <span className ='error'>Name is required</span>}&nbsp;
+                        <div>
+                        <input name="bookName" ref={register({ required: true })} placeholder ="Enter Name" />
+                        {errors.bookName && <span className ='error'>Book name is required</span>}&nbsp;&nbsp;
                         
-                        <input name="exampleRequired" ref={register({ required: true })} />
-                        {errors.exampleRequired && <span>This field is required</span>}<br/>
+                        <input name="authorName" ref={register({ required: true })} placeholder ="Enter Name" />
+                        {errors.AuthorName && <span span className ='error'>Author name required</span>}<br/>
+                        </div>
 
-                        <input name="name" ref={register({ required: true })} placeholder ="Your Name" />
-                        {errors.name && <span className ='error'>Name is required</span>}&nbsp;
+                        <div>
+                        <input name="price" type = "number" ref={register({ required: true })} placeholder ="Enter Price" />
+                        {errors.price && <span className ='error'>Add price is required</span>}&nbsp;&nbsp;
                         
-                        <input name="exampleRequired" ref={register({ required: true })} />
-                        {errors.exampleRequired && <span>This field is required</span>}<br/>
-                        <input type="submit" />
+                        <input name="exampleRequired" type = "file" onChange = {handleImageUpload} />
+                        {/* {errors.exampleRequired && <span>Upload image required</span>}<br/> */}
+                        </div>
+                        <input style = {{width: "100px"}} type="submit" />
                     </form>
                 </div>
              </div>
