@@ -8,7 +8,6 @@ import {
 } from "react-router-dom";
 import Home from './components/Home/Home';
 import Header from './components/Header/Header';
-import product from './components/Product/Product'
 import Admin from './components/Admin/Admin';
 import Manage from './components/Admin/Mange/Manage';
 import Add from './components/Admin/Add/Add';
@@ -18,8 +17,9 @@ import Login from './components/Login/Login';
 import SideNav from './components/SideNav/SideNav';
 import NotFound from './components/NoFound/NoFound'
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
-import Product from './components/Product/Product';
-// import Form from './components/Form/Form';
+import Books from './components/Books/Books';
+import Order from './components/Order/Order';
+
 
 export const UserContext = createContext()
 
@@ -28,6 +28,7 @@ function App() {
   return (
     <UserContext.Provider  value = {[logInUser, setLogInUser]}>
       <Router>
+        <h3>Context api use : {logInUser.email}</h3>
       <Header></Header>
         <Switch>
             <Route path = '/home'>
@@ -38,13 +39,17 @@ function App() {
               <Home></Home>
             </Route>
 
-            <Route path = '/admin'>
+            <PrivateRoute path = '/admin'>
               <Admin></Admin>
-            </Route>
+            </PrivateRoute>
 
             <Route path = '/admin/customize'>
               <Customize></Customize>
             </Route>
+            
+            <PrivateRoute path = '/order'>
+              <Order></Order>
+            </PrivateRoute>
 
             <Route path = '/add'>
               <Add></Add>
@@ -54,9 +59,9 @@ function App() {
               <Manage></Manage>
             </PrivateRoute>
 
-            <Route path = '/checkout'>
+            <PrivateRoute path = '/checkout/:_id'>
               <CheckOut></CheckOut>
-            </Route>
+            </PrivateRoute>
 
             <Route path = '/login'>
               <Login></Login>
@@ -66,8 +71,8 @@ function App() {
               <SideNav></SideNav>
             </Route>
 
-            <Route path = '/product'>
-              <Product></Product>
+            <Route path = '/books'>
+              <Books></Books>
             </Route>
 
             <Route path = '*'>
