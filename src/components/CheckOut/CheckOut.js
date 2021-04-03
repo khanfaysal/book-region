@@ -17,11 +17,9 @@ const CheckOut = () => {
                 setBook(info[0]);
             });
     }, [_id]);
-    
-
     const handleChecked = () => {
         const {bookName, authorName, price, imageURL} = book;
-        const newOrder = { ...loggedInUser, bookName, authorName, price, imageURL, dateTime };
+        const newOrder = { loggedInUser, bookName, authorName, price, imageURL, dateTime };
         fetch('http://localhost:5055/addOrder', {
             method: 'POST',
             headers: {
