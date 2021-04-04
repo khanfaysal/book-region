@@ -1,7 +1,8 @@
 import React from 'react';
 import SideNav from '../../SideNav/SideNav.js';
 
-const Manage = () => {
+const Manage = (props) => {
+    const {bookName} = props.manage;
     return (
         <div className = "container">
              <div className = "row">
@@ -21,7 +22,7 @@ const Manage = () => {
                         </thead>
                         <tbody>
                             <tr>
-                            <th scope="row">Beautiful life</th>
+                            <th scope="row">{bookName}</th>
                                 <td>J.K</td>
                                 <td>Otto</td>
                                 <td>@mdo</td>
