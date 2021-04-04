@@ -3,7 +3,7 @@ import { UserContext } from '../../App';
 import { useParams } from 'react-router-dom';
 
 const CheckOut = () => {
-    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const [logInUser, setLogInUser] = useContext(UserContext);
     const { _id } = useParams();
     const [book, setBook] = useState([]);
     const dateTime = new Date().toLocaleString();
@@ -19,7 +19,13 @@ const CheckOut = () => {
     }, [_id]);
     const handleChecked = () => {
         const {bookName, authorName, price, imageURL} = book;
-        const newOrder = { loggedInUser, bookName, authorName, price, imageURL, dateTime };
+        const userInfo = {
+            name: logInUser.displayName,
+            email:logInUser.email
+        }
+        console.log(userInfo)
+        const newOrder = { userInfo, bookName, authorName, price, imageURL, dateTime };
+        console.log(newOrder);
         fetch('http://localhost:5055/addOrder', {
             method: 'POST',
             headers: {
