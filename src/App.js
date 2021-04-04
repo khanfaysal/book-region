@@ -28,7 +28,7 @@ function App() {
   return (
     <UserContext.Provider  value = {[logInUser, setLogInUser]}>
       <Router>
-        <h3>Context api use : {logInUser.email}</h3>
+        {/* <h3>Context api use : {logInUser.email}</h3> */}
       <Header></Header>
         <Switch>
             <Route path = '/home'>
@@ -43,7 +43,7 @@ function App() {
               <Admin></Admin>
             </PrivateRoute>
 
-            <Route path = '/admin/customize'>
+            <Route path = '/customize'>
               <Customize></Customize>
             </Route>
             
@@ -51,9 +51,9 @@ function App() {
               <Order></Order>
             </PrivateRoute>
 
-            <Route path = '/add'>
+            <PrivateRoute path = '/add'>
               <Add></Add>
-            </Route>
+            </PrivateRoute>
 
             <PrivateRoute path = '/manage'>
               <Manage></Manage>

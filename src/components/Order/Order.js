@@ -28,7 +28,7 @@ const Order = () => {
                     <tbody>
                         <tr>
                             <th scope="row">{singleOrder.bookName}</th>
-                            <td>Quantity</td>
+                            <td>1</td>
                             <td>{singleOrder.price}</td>
                         </tr>
                     </tbody>) : <Spinner className="d-flex justify-content-center align-items-center" animation="border" role="status">
