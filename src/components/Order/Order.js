@@ -18,13 +18,13 @@ const Order = () => {
             <thead>
                 <tr>
                     <th scope="col" className="text-warning">Book Name</th>
-                    <th scope="col" className="text-warning">Author Name</th>
+                    <th scope="col" >Author Name</th>
                     <th scope="col" className="text-warning">Quantity</th>
-                    <th scope="col" className="text-warning">price</th>
+                    <th scope="col" >price</th>
                 </tr>
             </thead>
                 {
-                    order.length > 0 ? order.map(singleOrder =>
+                    order.length > 0 ? order.map(singleOrder => 
                     <tbody>
                         <tr>
                             <th scope="row">{singleOrder.bookName}</th>

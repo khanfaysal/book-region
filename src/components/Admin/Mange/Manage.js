@@ -2,7 +2,21 @@ import React from 'react';
 import SideNav from '../../SideNav/SideNav.js';
 
 const Manage = (props) => {
-    const {books} = props;
+    const { books } = props;
+    console.log(books)
+
+    const specificDeleteBook = (id) =>{
+        const url = `http://localhost:5055/deleteBook/${id}`;
+        fetch(url,{
+            method: 'DELETE',
+        })
+        
+        .then(res =>res.json())
+        .then(data =>console.log(data))
+        
+        // console.log("clicked", id);
+    };
+
     return (
         <div className = "container">
              <div className = "row">
@@ -22,14 +36,14 @@ const Manage = (props) => {
                         </thead>
                         <tbody>
                             {
-                                books.map(info => {
+                             books.map(info => {
                                     const {bookName, authorName, price, _id} = info;
                                     return (
                                         <tr key={_id}>
                                             <th>{bookName}</th>
                                             <td>{authorName}</td>
                                             <td>{price}</td>
-                                            <td>@mdo</td>
+                                            <td><button onClick ={() => specificDeleteBook(_id)}>Delete</button></td>
                                         </tr>
                                     );
                                 })
