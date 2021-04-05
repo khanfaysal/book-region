@@ -12,15 +12,15 @@ const Order = () => {
 
     return (
         <div className = "container">
-        
             <div className = "row">
                 <div className = "col-md-12">
-                <table class="table">
+                <table className="table">
             <thead>
                 <tr>
-                    <th scope="col">Book Name</th>
-                    <th scope="col">Quantity</th>
-                    <th scope="col">price</th>
+                    <th scope="col" className="text-warning">Book Name</th>
+                    <th scope="col" className="text-warning">Author Name</th>
+                    <th scope="col" className="text-warning">Quantity</th>
+                    <th scope="col" className="text-warning">price</th>
                 </tr>
             </thead>
                 {
@@ -28,8 +28,9 @@ const Order = () => {
                     <tbody>
                         <tr>
                             <th scope="row">{singleOrder.bookName}</th>
+                            <th scope="row">{singleOrder.authorName}</th>
                             <td>1</td>
-                            <td>{singleOrder.price}</td>
+                            <td>${singleOrder.price}</td>
                         </tr>
                     </tbody>) : <Spinner className="d-flex justify-content-center align-items-center" animation="border" role="status">
                                 <span className="sr-only">Loading...</span>

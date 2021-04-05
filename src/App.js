@@ -24,6 +24,7 @@ import Order from './components/Order/Order';
 export const UserContext = createContext()
 
 function App() {
+  const [books, setBooks] = useState([]);
   const [logInUser, setLogInUser] = useState({});
   return (
     <UserContext.Provider  value = {[logInUser, setLogInUser]}>
@@ -32,11 +33,11 @@ function App() {
       <Header></Header>
         <Switch>
             <Route path = '/home'>
-              <Home></Home>
+              <Home books={books} setBooks={setBooks}></Home>
             </Route>
 
             <Route exact path = '/'>
-              <Home></Home>
+              <Home books={books} setBooks={setBooks}></Home>
             </Route>
 
             <PrivateRoute path = '/admin'>
@@ -56,7 +57,7 @@ function App() {
             </PrivateRoute>
 
             <PrivateRoute path = '/manage'>
-              <Manage></Manage>
+              <Manage books={books}></Manage>
             </PrivateRoute>
 
             <PrivateRoute path = '/checkout/:_id'>
@@ -72,7 +73,7 @@ function App() {
             </Route>
 
             <Route path = '/books'>
-              <Books></Books>
+              <Books books={books}></Books>
             </Route>
 
             <Route path = '*'>

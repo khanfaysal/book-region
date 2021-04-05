@@ -45,7 +45,7 @@ const CheckOut = () => {
             <h5 className = "text-danger">Date & Time: {dateTime}</h5>
             <div className='card mb-3 p-3 bg-dark shadow p-3 mb-5 bg-body rounded border-0'>
                 <div className='row g-0'>
-                    <div className='col-md-12'>
+                    <div className='col-md-4'>
                         <div className='card-body '>
                         <img src={book.imageURL} alt={book.imageURL} className='w-100 shadow p-3 mb-5 bg-body rounded' />
                             <h4 className='card-title fw-bold text-warning d-flex justify-content-center align-items-center '>{book.bookName}</h4>
@@ -56,7 +56,7 @@ const CheckOut = () => {
                     </div>
                 </div>
             </div>
-            <div class="d-grid gap-2">
+            <div className="d-grid gap-2">
                 <button className='btn btn-dark text-danger fs-4 fw-bold' onClick={handleChecked}>Order Now</button>
             </div>
         </div>
