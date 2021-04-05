@@ -14,22 +14,19 @@ import Add from './components/Admin/Add/Add';
 import Customize from './components/Admin/Customize/Customize';
 import CheckOut from './components/CheckOut/CheckOut';
 import Login from './components/Login/Login';
-import SideNav from './components/SideNav/SideNav';
+// import SideNav from './components/SideNav/SideNav';
 import NotFound from './components/NoFound/NoFound'
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Books from './components/Books/Books';
 import Order from './components/Order/Order';
 
-
 export const UserContext = createContext()
-
 function App() {
   const [books, setBooks] = useState([]);
   const [logInUser, setLogInUser] = useState({});
   return (
     <UserContext.Provider  value = {[logInUser, setLogInUser]}>
       <Router>
-        {/* <h3>Context api use : {logInUser.email}</h3> */}
       <Header></Header>
         <Switch>
             <Route path = '/home'>
@@ -44,9 +41,9 @@ function App() {
               <Admin></Admin>
             </PrivateRoute>
 
-            <Route path = '/customize'>
+            <PrivateRoute path = '/customize'>
               <Customize></Customize>
-            </Route>
+            </PrivateRoute>
             
             <PrivateRoute path = '/order'>
               <Order></Order>
@@ -68,9 +65,9 @@ function App() {
               <Login></Login>
             </Route>
 
-            <Route path = '/sidenav'>
+            {/* <Route path = '/sidenav'>
               <SideNav></SideNav>
-            </Route>
+            </Route> */}
 
             <Route path = '/books'>
               <Books books={books}></Books>
@@ -85,5 +82,4 @@ function App() {
     </UserContext.Provider>
   );
 }
-
 export default App;

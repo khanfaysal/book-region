@@ -11,7 +11,7 @@ const Books = (props) => {
                 return (
                     <div className="col-md-4" key={_id}>
                         <div className="card shadow p-3 mb-3 bg-light rounded" style={{width: "20rem"}} key={_id}>
-                            <img src={imageURL} className="card-img-top img-fluid" alt="..."/>
+                            <img src={imageURL} className="card-img-top img-fluid" alt=""/>
                             <div className="card-body">
                                 <h5 className="card-title">{bookName}</h5>
                                 <p className="card-text">{authorName}</p>

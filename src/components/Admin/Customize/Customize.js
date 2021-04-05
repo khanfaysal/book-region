@@ -12,8 +12,7 @@ const Customize = () => {
                     <h2>Under Construction .....</h2>
                 </div>
             </div>
-   </div>
+       </div>
     );
 };
-
 export default Customize;

@@ -8,8 +8,7 @@ const Order = () => {
         fetch(url)
         .then(res =>res.json())
         .then(data =>setOrder(data))
-    }, [])
-
+    }, []);
     return (
         <div className = "container">
             <div className = "row">
@@ -32,9 +31,11 @@ const Order = () => {
                             <td>1</td>
                             <td>${singleOrder.price}</td>
                         </tr>
-                    </tbody>) : <Spinner className="d-flex justify-content-center align-items-center" animation="border" role="status">
-                                <span className="sr-only">Loading...</span>
-                                </Spinner>
+                    </tbody>) :
+                    
+                    <Spinner className="d-flex justify-content-center align-items-center" animation="border" role="status">
+                    <span className="sr-only">Loading...</span>
+                    </Spinner> 
                 }
               </table>
             </div>

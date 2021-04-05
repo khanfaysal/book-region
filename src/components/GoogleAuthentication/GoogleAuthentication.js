@@ -1,5 +1,4 @@
 import React, { useContext, useState } from 'react';
-// import React, { useState } from 'react';
 import firebase from "firebase/app";
 import "firebase/auth";
 import firebaseConfig from '../Login/firebase.config';
@@ -10,8 +9,6 @@ import { useHistory, useLocation } from 'react-router';
 if (!firebase.apps.length) {
     firebase.initializeApp(firebaseConfig);
   }
-  
-
 const GoogleAuthentication = () => {
     const [user, setUser] = useState({})
     const [logInUser, setLogInUser] = useContext(UserContext);
@@ -55,9 +52,6 @@ const GoogleAuthentication = () => {
     return (
      <div className="App">
         <button style ={buttonStyle} onClick = {handleGoogleSignIn}>Sign in Using Google</button>
-        {/* <h3>User Name : {user.displayName}</h3>
-        <p>user email: {user.email}</p>
-        <img src={user.photoURL} alt=""/> */}
     </div>
     );
 };

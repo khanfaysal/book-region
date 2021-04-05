@@ -5,7 +5,7 @@ import SideNav from '../../SideNav/SideNav';
 import './Add.css';
 
 const Add = () => {
-    const { register, handleSubmit, watch, errors, } = useForm();
+    const { register, handleSubmit, errors } = useForm();
     const [imageURL, setImageURL] = useState(null);
 
     const onSubmit = data => {
@@ -34,15 +34,12 @@ const Add = () => {
 
         axios.post('https://api.imgbb.com/1/upload',imageData)
             .then(function (response) {
-                // handle success
                 setImageURL(response.data.data.display_url);
             })
             .catch(function (error) {
-                // handle error
                 console.log(error);
             })
             .then(function () {
-                // always executed
                 
             });
     }
@@ -78,5 +75,4 @@ const Add = () => {
         </div>
     );
 };
-
 export default Add;

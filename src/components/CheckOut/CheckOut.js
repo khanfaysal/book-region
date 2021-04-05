@@ -23,9 +23,9 @@ const CheckOut = () => {
             name: logInUser.displayName,
             email:logInUser.email
         }
-        console.log(userInfo)
+        // console.log(userInfo)
         const newOrder = { userInfo, bookName, authorName, price, imageURL, dateTime };
-        console.log(newOrder);
+        // console.log(newOrder);
         fetch('http://localhost:5055/addOrder', {
             method: 'POST',
             headers: {
@@ -35,14 +35,14 @@ const CheckOut = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                // console.log(data);
                 alert('Order placed successfully!')
             });
     };
     return (
         <div className='container py-5'>
-            <h1 className = "text-danger">Checkout</h1>
-            <h5 className = "text-danger">Date & Time: {dateTime}</h5>
+            <h1 className = "text-danger text-center">Checkout</h1>
+            <h5 className = "text-danger text-end">Date & Time: {dateTime}</h5>
             <div className='card mb-3 p-3 bg-dark shadow p-3 mb-5 bg-body rounded border-0'>
                 <div className='row g-0'>
                     <div className='col-md-4'>
@@ -62,5 +62,4 @@ const CheckOut = () => {
         </div>
     );
 };
-
 export default CheckOut;

@@ -3,20 +3,16 @@ import SideNav from '../../SideNav/SideNav.js';
 
 const Manage = (props) => {
     const { books } = props;
-    console.log(books)
-
+    // console.log(books)
     const specificDeleteBook = (id) =>{
         const url = `http://localhost:5055/deleteBook/${id}`;
         fetch(url,{
             method: 'DELETE',
         })
-        
         .then(res =>res.json())
         .then(data =>console.log(data))
-        
         // console.log("clicked", id);
     };
-
     return (
         <div className = "container">
              <div className = "row">
@@ -55,5 +51,4 @@ const Manage = (props) => {
         </div>
     );
 };
-
 export default Manage;
