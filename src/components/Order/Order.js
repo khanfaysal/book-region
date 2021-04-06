@@ -4,7 +4,7 @@ import { Spinner } from 'react-bootstrap';
 const Order = () => {
     const [order, setOrder] = useState({});
     useEffect(() => {
-        const url = 'http://localhost:5055/orders'
+        const url = 'y'
         fetch(url)
         .then(res =>res.json())
         .then(data =>setOrder(data))

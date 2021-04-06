@@ -5,7 +5,7 @@ const Manage = (props) => {
     const { books } = props;
     // console.log(books)
     const specificDeleteBook = (id) =>{
-        const url = `http://localhost:5055/deleteBook/${id}`;
+        const url = `https://obscure-caverns-56615.herokuapp.com/deleteBook/${id}`;
         fetch(url,{
             method: 'DELETE',
         })

@@ -15,7 +15,7 @@ const Add = () => {
             price: data.price,
             imageURL: imageURL
         };
-        const url = `http://localhost:5055/addBookInfo`;
+        const url = `https://obscure-caverns-56615.herokuapp.com/addBookInfo`;
         fetch(url,{
             method: 'POST',
             headers: {

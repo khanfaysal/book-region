@@ -4,7 +4,7 @@ import Books from '../Books/Books.js';
 const Home = (props) => {
     const {books, setBooks} = props;
     useEffect(() =>{
-        fetch('http://localhost:5055/books')
+        fetch('https://obscure-caverns-56615.herokuapp.com/books')
         .then(res =>res.json())
         .then(data =>setBooks(data))
     },[setBooks])

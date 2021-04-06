@@ -9,7 +9,7 @@ const CheckOut = () => {
     const dateTime = new Date().toLocaleString();
 
     useEffect(() => {
-        fetch('http://localhost:5055/books')
+        fetch('https://obscure-caverns-56615.herokuapp.com/books')
             .then((res) => res.json())
             .then((data) => {
                 const info = data.filter((book) => _id == book._id);
@@ -26,7 +26,7 @@ const CheckOut = () => {
         // console.log(userInfo)
         const newOrder = { userInfo, bookName, authorName, price, imageURL, dateTime };
         // console.log(newOrder);
-        fetch('http://localhost:5055/addOrder', {
+        fetch('https://obscure-caverns-56615.herokuapp.com/addOrder', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
