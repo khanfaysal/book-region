@@ -7,7 +7,6 @@ import { useHistory, useLocation } from 'react-router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
-
 if (!firebase.apps.length) {
     firebase.initializeApp(firebaseConfig);
   }

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 const Order = () => {
     const [order, setOrder] = useState({});
     useEffect(() => {
-        const url = 'https://obscure-caverns-56615.herokuapp.com/books';
+        const url = 'https://obscure-caverns-56615.herokuapp.com/orders';
         fetch(url)
         .then(res =>res.json())
         .then(data =>setOrder(data))
