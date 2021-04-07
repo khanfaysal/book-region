@@ -18,10 +18,10 @@ const Manage = (props) => {
     return (
         <div className = "container">
              <div className = "row">
-             <div className = "col-md-3">
+             <div className = "col-md-3 col-sm-2">
                  <SideNav></SideNav>
              </div>
-                <div className = "col-md-9">
+                <div className = "col-md-9 col-sm-10">
                     <h2 className = "text-danger fw-bold fs-3">Manage Book</h2>
                     <table className="table">
                         <thead>

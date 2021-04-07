@@ -54,8 +54,11 @@ const Add = () => {
                     <hr className = "text-center"style={{ height: '2px', color: '#130f40', backgroundColor: 'red',}} />
                     <form className = "book-form" onSubmit={handleSubmit(onSubmit)}>
                         <div>
-                        <input name="bookName" ref={register({ required: true })} placeholder ="Enter Name" />
-                        {errors.bookName && <span className ='error'>Book name is required</span>}&nbsp;&nbsp;
+                        <label>
+                            First Name :<br />
+                            <input name="bookName" ref={register({ required: true })} placeholder ="Enter Name" />
+                            {errors.bookName && <span className ='error'>Book name is required</span>}&nbsp;&nbsp;
+                        </label>
                         
                         <input name="authorName" ref={register({ required: true })} placeholder ="Enter Name" />
                         {errors.AuthorName && <span span className ='error'>Author name required</span>}<br/>

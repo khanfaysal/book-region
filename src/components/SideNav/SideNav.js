@@ -8,7 +8,7 @@ import './SideNav.css';
 
 const SideNav = () => {
     return (
-        <div className="sidenav">
+        <div className="side-nav">
             <h3 className = "text-color text-uppercase d-flex justify-content-center align-items-center ">BOOK region</h3>
                <nav className="navbar navbar-expand-lg navbar-light">
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">

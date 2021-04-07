@@ -13,6 +13,7 @@ if (!firebase.apps.length) {
 const GoogleAuthentication = () => {
     const [user, setUser] = useState({})
     const [logInUser, setLogInUser] = useContext(UserContext);
+    console.log(logInUser)
     const history = useHistory();
     const location = useLocation();
     let {from} = location.state || {from: { pathname: "/"}};

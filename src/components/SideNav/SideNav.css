@@ -1,4 +1,4 @@
-.sidenav {
+.side-nav {
     height: 100%;
     width: 265px;
     position: fixed;
@@ -8,11 +8,17 @@
     background-color: #130f40;
     overflow-x: hidden;
     padding-top: 120px;
-  }
-  @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
-  }
+  } 
   .text-color{
     color: #eb4d4b;
   }
+
+  /* @media screen and (max-height: 450px) {
+    .side-nav {padding-top: 15px;}
+  }
+  @media (min-width: 576px) {
+    .side-nav{
+      background-color: none;
+      width: 100px;
+    }
+  } */
