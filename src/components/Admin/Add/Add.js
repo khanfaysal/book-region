@@ -50,9 +50,9 @@ const Add = () => {
                  <SideNav></SideNav>
              </div>
                 <div className = "col-md-10">
-                    <h2>Add Book</h2>
+                    <h2 className = "text-center fs-4 heading-color">Add Book</h2>
+                    <hr className = "text-center"style={{ height: '2px', color: '#130f40', backgroundColor: 'red',}} />
                     <form className = "book-form" onSubmit={handleSubmit(onSubmit)}>
-
                         <div>
                         <input name="bookName" ref={register({ required: true })} placeholder ="Enter Name" />
                         {errors.bookName && <span className ='error'>Book name is required</span>}&nbsp;&nbsp;

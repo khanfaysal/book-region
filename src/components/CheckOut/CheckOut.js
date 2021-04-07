@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { UserContext } from '../../App';
 import { useParams } from 'react-router-dom';
+import './CheckOut.css';
 
 const CheckOut = () => {
     const [logInUser, setLogInUser] = useContext(UserContext);
@@ -42,8 +43,11 @@ const CheckOut = () => {
     return (
         <div className='container py-5'>
             <h1 className = "text-danger text-center">Checkout</h1>
+            <hr className = "text-center" style={{ height: '2px', color: '#130f40', backgroundColor: 'red'}} />
+            <h5 className = "text-danger">User Name: {logInUser.displayName} </h5>
+            <h5 className = "text-danger">User Email: {logInUser.email} </h5>
             <h5 className = "text-danger text-end">Date & Time: {dateTime}</h5>
-            <div className='card mb-3 p-3 bg-dark shadow p-3 mb-5 bg-body rounded border-0'>
+            <div className='card mb-3 p-3 shadow p-3 mb-5 bg-body rounded border-0 bg-dark'>
                 <div className='row g-0'>
                     <div className='col-md-4'>
                         <div className='card-body '>

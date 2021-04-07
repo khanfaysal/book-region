@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Spinner } from 'react-bootstrap';
 
 const Order = () => {
     const [order, setOrder] = useState({});
     useEffect(() => {
-        const url = 'y'
+        const url = 'https://obscure-caverns-56615.herokuapp.com/books';
         fetch(url)
         .then(res =>res.json())
         .then(data =>setOrder(data))
@@ -13,12 +12,12 @@ const Order = () => {
         <div className = "container">
             <div className = "row">
                 <div className = "col-md-12">
-                <table className="table">
+                <table className="table mb-5">
             <thead>
                 <tr>
-                    <th scope="col" className="text-warning">Book Name</th>
+                    <th scope="col" className="text-danger">Book Name</th>
                     <th scope="col" >Author Name</th>
-                    <th scope="col" className="text-warning">Quantity</th>
+                    <th scope="col" className="text-danger">Quantity</th>
                     <th scope="col" >price</th>
                 </tr>
             </thead>
@@ -32,10 +31,11 @@ const Order = () => {
                             <td>${singleOrder.price}</td>
                         </tr>
                     </tbody>) :
-                    
-                    <Spinner className="d-flex justify-content-center align-items-center" animation="border" role="status">
-                    <span className="sr-only">Loading...</span>
-                    </Spinner> 
+                    <div class="d-flex justify-content-center">
+                        <div class="spinner-border text-danger" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </div>    
                 }
               </table>
             </div>

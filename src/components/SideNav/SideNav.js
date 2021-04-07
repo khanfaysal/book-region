@@ -9,16 +9,16 @@ import './SideNav.css';
 const SideNav = () => {
     return (
         <div className="sidenav">
-            <h3 className = "text-warning text-uppercase d-flex justify-content-center align-items-center">BOOK region</h3>
+            <h3 className = "text-color text-uppercase d-flex justify-content-center align-items-center ">BOOK region</h3>
                <nav className="navbar navbar-expand-lg navbar-light">
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div className="navbar-nav nav flex-column ">
-                            <Link className="nav-link active text-white  " aria-current="page" to ="/manage"><FontAwesomeIcon icon={faThLarge} color="lime"  />Manage Books</Link>
-                            <Link className="nav-link text-white " to ="/add"><FontAwesomeIcon icon={faPlus} />Add Book</Link>
-                            <Link className="nav-link text-white " to ="/customize"><FontAwesomeIcon icon={faEdit} color="lime" />Edit Book</Link>
+                            <Link className="nav-link text-white fs-6" aria-current="page" to ="/manage"><FontAwesomeIcon icon={faThLarge} color="#eb4d4b"/>&nbsp;&nbsp;Manage Books</Link>
+                            <Link className="nav-link text-white fs-6" to ="/add"><FontAwesomeIcon icon={faPlus} color="#eb4d4b"/>&nbsp;&nbsp;Add Book</Link>
+                            <Link className="nav-link text-white fs-6" to ="/customize"><FontAwesomeIcon icon={faEdit} color="#eb4d4b"/>&nbsp;&nbsp;Edit Book</Link>
                         </div>
                     </div>
                 </nav> 

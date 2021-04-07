@@ -4,6 +4,8 @@ import "firebase/auth";
 import firebaseConfig from '../Login/firebase.config';
 import { UserContext } from '../../App.js';
 import { useHistory, useLocation } from 'react-router';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 
 if (!firebase.apps.length) {
@@ -40,7 +42,7 @@ const GoogleAuthentication = () => {
     }
     const buttonStyle = {
         color: 'black',
-        backgroundColor: 'tomato',
+        backgroundColor: '#eb4d4b',
         borderRadius: 5,
         border: 'none',
         margin: '25px 6px',
@@ -51,7 +53,7 @@ const GoogleAuthentication = () => {
       }
     return (
      <div className="App">
-        <button style ={buttonStyle} onClick = {handleGoogleSignIn}>Sign in Using Google</button>
+        <button style ={buttonStyle} onClick = {handleGoogleSignIn}><FontAwesomeIcon icon={faPlus} color="#eb4d4b"/>Sign in Using Google</button>
     </div>
     );
 };
