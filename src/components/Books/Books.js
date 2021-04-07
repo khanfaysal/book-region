@@ -16,7 +16,7 @@ const Books = (props) => {
             books.map(info => {
                 const {imageURL, bookName, authorName, price, _id} = info;
                 return (
-                    <div className="col-md-4" key={_id}>
+                    <div className="col-md-4 mt-5" key={_id}>
                         <div className="card shadow p-3 mb-5 bg-body rounded" style={{width: "23rem"}} key={_id}>
                             <img src={imageURL} className="card-img-top img-fluid" alt=""/>
                             <div className="card-body">
