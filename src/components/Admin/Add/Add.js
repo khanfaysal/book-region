@@ -55,20 +55,28 @@ const Add = () => {
                     <form className = "book-form" onSubmit={handleSubmit(onSubmit)}>
                         <div>
                         <label>
-                            First Name :<br />
-                            <input name="bookName" ref={register({ required: true })} placeholder ="Enter Name" />
+                            <p className = "fw-bold text-danger">Book Name</p>
+                            <input name="bookName" ref={register({ required: true })} className="mt-0" placeholder ="Enter Name" />
                             {errors.bookName && <span className ='error'>Book name is required</span>}&nbsp;&nbsp;
                         </label>
-                        
-                        <input name="authorName" ref={register({ required: true })} placeholder ="Enter Name" />
-                        {errors.AuthorName && <span span className ='error'>Author name required</span>}<br/>
+                        <label>
+                            <p className = "fw-bold text-danger">Author Name</p>
+                            <input name="authorName" ref={register({ required: true })} className="mt-0" placeholder ="Enter Name" />
+                            {errors.AuthorName && <span span className ='error'>Author name required</span>}<br/>
+                        </label>
                         </div>
 
-                        <div>
-                        <input name="price" type = "number" ref={register({ required: true })} placeholder ="Enter Price" />
-                        {errors.price && <span className ='error'>Add price is required</span>}&nbsp;&nbsp;
+                        <div className = "mt-3">
+                        <label>
+                            <h6 className = "fw-bold mb-3 text-danger">Add Price</h6>
+                            <input name="price" type = "number" ref={register({ required: true })} className="mt-0" placeholder ="Enter Price" />
+                            {errors.price && <span className ='error'>Add price is required</span>}&nbsp;&nbsp;
+                        </label>
                         
-                        <input name="exampleRequired" type = "file" onChange = {handleImageUpload} />
+                        <label>
+                            <h6 className = "fw-bold mb-3 text-danger">Add Book Cover Photo</h6>
+                            <input name="exampleRequired" type = "file" onChange = {handleImageUpload} className="mt-0" />
+                        </label>
                         {/* {errors.exampleRequired && <span>Upload image required</span>}<br/> */}
                         </div>
                         <input style = {{width: "100px"}} type="submit" />
